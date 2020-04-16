@@ -28,7 +28,7 @@ jobs:
       run: chmod +x gradlew *.sh
     
     - name: Download and Build the Engine
-      run: TRAVIS_TAG=v3.3.0-stable-sdk1 ./build_engine.sh && ./fix_engine.sh
+      run: TRAVIS=true TRAVIS_TAG=v3.3.0-stable-sdk1 ./build_engine.sh && ./fix_engine.sh
       
     - name: Build the SDK
       run: ./gradlew buildSdk
