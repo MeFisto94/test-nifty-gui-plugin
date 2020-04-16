@@ -28,7 +28,7 @@ jobs:
       run: chmod +x gradlew *.sh
     
     - name: Download and Build the Engine
-      run: ./download_engine.sh && ./fix_engine.sh
+      run: ./build_engine.sh && ./fix_engine.sh
       
     - name: Build the SDK
       run: ./gradlew buildSdk
