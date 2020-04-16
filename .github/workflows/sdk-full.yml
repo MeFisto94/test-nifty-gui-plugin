@@ -18,6 +18,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         repository: 'jMonkeyEngine/sdk'
+        ref: 'v3.3.0-beta1-sdkgradlepreview'
 
     - name: Set up JDK 11
       uses: actions/setup-java@v1
@@ -28,18 +29,18 @@ jobs:
       run: chmod +x gradlew *.sh
     
     - name: Download and Build the Engine
-      run: TRAVIS=true TRAVIS_TAG=v3.3.0-stable-sdk1 ./build_engine.sh && ./fix_engine.sh
+      run: TRAVIS=true TRAVIS_TAG=v3.3.0-beta1-sdkgradlepreview ./build_engine.sh && ./fix_engine.sh
       
     - name: Build the SDK
       run: ./gradlew buildSdk
       
     - uses: actions/checkout@v2
       with:
-        path: jme3-gui
+        path: jme3-nifty-gui
 
     - name: Build the Plugin
-      working-directory: jme3-gui
+      working-directory: jme3-nifty-gui
       run: ant
     
     - run: ls -lsh build/* release/* *
-      working-directory: jme3-gui
+      working-directory: jme3-nifty-gui
