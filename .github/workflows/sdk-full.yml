@@ -45,6 +45,11 @@ jobs:
     - name: Build the Plugin
       working-directory: jme3-nifty-gui
       run: ant nbm-nosignature
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: com-jme3-gde-gui.nbm
+        path: build/com-jme3-gde-gui.nbm
     
     - run: ls -lsh build/* release/* *
       working-directory: jme3-nifty-gui
