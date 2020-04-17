@@ -47,12 +47,18 @@ jobs:
     
     - name: Extract info.xml
       working-directory: jme3-nifty-gui
-      run: unzip build/com-jme3-gde-gui.nbm 'Info/info.xml' && mv Info/info.xml info.xml && ls -lsh *
+      run: unzip build/com-jme3-gde-gui.nbm 'Info/info.xml' && mv Info/info.xml info.xml
+    
+    #- name: Fix info.xml
+    #  working-directory: jme3-nifty-gui
+    #  run: sed s/downloadsize="0"/downloadsize="$(du info.xml)/ info.xml
 
     - uses: actions/upload-artifact@v1
       with:
         name: com-jme3-gde-gui.nbm
         path: jme3-nifty-gui/build/com-jme3-gde-gui.nbm
-    
-    - run: ls -lsh build/* release/* *
-      working-directory: jme3-nifty-gui
+        
+    - uses: actions/upload-artifact@v1
+      with:
+        name: info.xml
+        path: jme3-nifty-gui/info.xml
