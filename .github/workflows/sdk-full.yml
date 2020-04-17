@@ -47,7 +47,7 @@ jobs:
     
     - name: Extract info.xml
       working-directory: jme3-nifty-gui
-      run: unzip build/com-jme3-gde-gui.nbm 'Info/info.xml' -d info.xml && ls -lsh *
+      run: unzip build/com-jme3-gde-gui.nbm 'Info/info.xml' && mv Info/info.xml info.xml && ls -lsh *
 
     - uses: actions/upload-artifact@v1
       with:
