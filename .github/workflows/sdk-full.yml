@@ -55,7 +55,7 @@ jobs:
     
     - name: Fix info.xml's URL (distribution)
       working-directory: jme3-nifty-gui
-      run: sed -i "s/distribution=\"\"/distribution=\"https://github.com/MeFisto94/test-nifty-gui-plugin/releases/download/v0.1/com-jme3-gde-gui.nbm\"/" info.xml
+      run: sed -i "s/distribution=\"\"/distribution=\"https:\/\/github.com\/MeFisto94\/test-nifty-gui-plugin\/releases\/download/v0\.1\/com-jme3-gde-gui.nbm\"/" info.xml
 
     - uses: actions/upload-artifact@v1
       with:
