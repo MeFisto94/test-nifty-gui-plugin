@@ -51,7 +51,7 @@ jobs:
     
     - name: Fix info.xml
       working-directory: jme3-nifty-gui
-      run: sed -i "s/downloadsize=\"0\"/downloadsize=\"$(wc -c <info.xml)\"/" info.xml
+      run: sed -i "s/downloadsize=\"0\"/downloadsize=\"$(wc -c <build/com-jme3-gde-gui.nbm)\"/" info.xml
 
     - uses: actions/upload-artifact@v1
       with:
