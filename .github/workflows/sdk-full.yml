@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -50,6 +49,7 @@ jobs:
       with:
         name: com-jme3-gde-gui.nbm
         path: build/com-jme3-gde-gui.nbm
+        working-directory: jme3-nifty-gui
     
     - run: ls -lsh build/* release/* *
       working-directory: jme3-nifty-gui
