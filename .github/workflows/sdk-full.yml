@@ -40,7 +40,7 @@ jobs:
 
     - name: Build the Plugin
       working-directory: jme3-nifty-gui
-      run: ant nbm
+      run: ant nbm-nosignature
     
     - run: ls -lsh build/* release/* *
       working-directory: jme3-nifty-gui
