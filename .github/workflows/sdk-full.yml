@@ -44,6 +44,10 @@ jobs:
     - name: Build the Plugin
       working-directory: jme3-nifty-gui
       run: ant nbm-nosignature
+    
+    - name: Extract info.xml
+      working-directory: jme3-nifty-gui
+      run: unzip com-jme3-gde-gui.nbm 'Info/info.xml' && ls -lsh *
 
     - uses: actions/upload-artifact@v1
       with:
