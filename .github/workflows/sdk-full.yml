@@ -43,7 +43,7 @@ jobs:
 
     - name: Build the Plugin
       working-directory: jme3-nifty-gui
-      run: ant nbm-nosignature
+      run: ant -Djarsigner.enabled=false nbm-nosignature
     
     - name: Extract info.xml
       working-directory: jme3-nifty-gui
