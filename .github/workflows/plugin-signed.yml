@@ -1,7 +1,7 @@
 # This Plugin depends on SDK modules and as such we need to build the whole SDK
 # before being able to build this plugin.
 
-name: Plugin Build
+name: Signed Plugin Build
 
 on:
   push:
