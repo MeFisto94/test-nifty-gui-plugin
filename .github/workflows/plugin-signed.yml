@@ -32,11 +32,6 @@ jobs:
       
     - name: Build the SDK
       run: ./gradlew buildSdk
-    
-    # @TODO: specify the keystore location in properties
-    #- name: Fix the SDK so we can build unsigned plugins
-    #  run: sed -i "/keystore=.*/d" nbproject/platform.properties
-      # This will delete the keystore= property, which would trigger asking for the signing secret in any case
       
     - uses: actions/checkout@v2
       with:
