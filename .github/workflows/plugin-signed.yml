@@ -44,7 +44,9 @@ jobs:
 
     - name: Build the Plugin
       working-directory: jme3-nifty-gui
-      run: ant -Dstorepass="${{ secrets.NBM_SIGN_PASS }}" nbm
+      env:
+        NBM_SIGN_PASS: ${{ secrets.NBM_SIGN_PASS }}
+      run: ant -Dkeystore=keystore -Dstorepass="$NBM_SIGN_PASS" nbm
     
     - name: Extract info.xml
       working-directory: jme3-nifty-gui
